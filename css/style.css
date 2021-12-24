@@ -1,0 +1,3664 @@
+@charset "UTF-8";
+/*------------------------------------------------*\
+  #UTIL-NORMALIZE
+  Normalise l'ensemble des comportements au sein
+  d'un navigateur web
+\*-----------------------------------------------*/
+/*
+ * 1. Corriger la hauteur des lignes dans tous les navigateurs.
+ * 2. Empêcher l'ajustement de la taille de la police après un changement d'orientation dans iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/*
+ * Supprime la marge dans tous les navigateurs.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+ * 1. Modifie les styles de police dans tous les navigateurs
+ * 2. Supprime la marge dans Firefox et Safari.
+ */
+button {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Show the overflow in Edge.
+ */
+button {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Suppression de l'héritage de la transformation du texte dans Edge, Firefox et IE.
+*/
+button {
+  /* 1 */
+  text-transform: none;
+}
+
+/*
+ * Correction de l'impossibilité de styliser les types cliquables dans iOS et Safari.
+ */
+button {
+  -webkit-appearance: button;
+}
+
+/*
+ * Supprime la bordure et le rembourrage intérieurs dans Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/*
+ * Restaure les styles de mise au point non définis par la règle précédente.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------------*\
+  #GLOBAL
+  ------------------------------
+  Application des styles global au sein des éléments
+  de l'ensemble de l'application
+\*----------------------------------------------------*/
+html {
+  box-sizing: border-box;
+  font-size: 93.75%;
+}
+
+/*
+ * Défini globalement la taille des boîtes pour gérer les largeurs de rembourrage et de bordure.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*
+ *  Styles du body par défaut
+ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend Deca", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/*
+ * Réinitialise les styles de <bouton> créés par la plupart des navigateurs
+ */
+button {
+  padding: 0;
+  appearance: none;
+  border: 0;
+  border-radius: 0.8rem;
+  background: transparent;
+  line-height: 1;
+  cursor: auto;
+}
+
+/*
+ * Faire en sorte que la réinitialisation hérite de font-family au lieu des paramètres sans-serif
+ */
+button {
+  font-family: inherit;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*------------------------------------*\
+  #SETTINGS-TYPOGRAPHY
+\*------------------------------------*/
+/*
+ * Famille de polices pour les éléments d'en-tête.
+ * @type String | List
+ */
+/*
+ * Poids de la police des en-têtes.
+ * @type String
+ */
+/*
+ * Hauteur de ligne des en-têtes.
+ * @type Number
+ */
+/*
+ * Marge inférieure des en-têtes
+ * @type Number
+ */
+/*
+ * Styles d'en-têtes pour différentes tailles d'écran. Chaque valeur est une taille de police d'en-tête.
+ * @type Map
+ *
+ */
+/*
+ * Méthode de rendu du texte des en-têtes.
+ * @type String
+ */
+/*
+ * Style de police (par exemple, en italique) des en-têtes.
+ * @type String
+ */
+/*
+ * Hauteur de ligne du texte à l'intérieur des éléments `<p>`.
+ * @type Number
+ */
+/*
+ * Marge inférieure des paragraphes.
+ * @type Number
+ */
+/*
+ * Méthode de rendu du texte pour le texte du paragraphe.
+ * @type String
+ */
+/*
+ * Taille de police par défaut du corp de la page
+ * @type Number
+ */
+/*-----------------------------------------------*\
+  #TYPOGRAPHY-BASE
+  Application des styles de base de la typographie
+  ainsi que des classe utilitaires concernant les
+  en tête
+\*------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 93.75%;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Big Shoulders Display", cursive;
+  font-style: normal;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * Application de la font size des en tête et la génération
+ * des classes utilitaires
+ */
+h3, .h3 {
+  font-size: calc(1.3625rem + 1.35vw);
+}
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 2.375rem;
+  }
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------*\
+  #TYPOGRAPHY-COLORS
+  Définition des couleurs de text / liens possible
+\*------------------------------------------------*/
+.text-primary-orange {
+  color: #e38826;
+}
+
+.text-primary-dark-cyan {
+  color: #006970;
+}
+
+.text-primary-very-dark-cyan {
+  color: #004241;
+}
+
+.text-neutral-white {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.text-neutral-gray {
+  color: #f2f2f2;
+}
+
+/*------------------------------------------------*\
+  #TYPOGRAPHY-FONT-WEIGHT
+  Génération des classes permettant de modifier
+  le poids des polices de caractères
+\*-----------------------------------------------*/
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+/*-----------------------------------------------------------------*\
+  #SETTINGS-BREAKPOINTS
+  Permet de paramétré les breakpoints. Le site serra adaptative
+  en fonction de ces breakpoints.
+\*-----------------------------------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des media queries.
+ * @type Map
+ */
+/*-----------------------------------------------------------------*\
+  #UTIL-BREAKPOINTS
+  Permet la génération sur lesquelle les classes utilitaires peuvent
+  intervenir
+\*-----------------------------------------------------------------*/
+/*
+ * Retourne une chaîne vide si le point d'arrêt est le plus petit, sinon retourne le nom avec un tiret devant.
+ * Utile pour créer des utilitaires réactifs.
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Largeur minimum d'un breakpoint. Nul pour le plus petit (premier) point d'arrêt..
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Média ayant au moins la largeur minimale du point de rupture. Pas de requête pour le point de rupture le plus petit.
+ * Fait en sorte que le @content s'applique au point d'arrêt donné et plus large..
+ */
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*--------------------------------------------------------*\
+  #SETTINGS-SPACER
+  Gère les espace globale au margin, padding ect.
+  Permet la cohérence des espacements entre les éléments.
+\*--------------------------------------------------------*/
+/*
+ * Espacement principal baser que la margin globale ( 1rem = font-size 100% = 16px )
+ * @type Number
+ */
+/*-------------------------------------------------------------------*\
+  #PROTOTYPE-SPACER
+  Crée des classes utilitaires appropriées concernant les espacement
+  ( source intéressante aller dans le code source de bootstrap dans
+  le dossier utilities, les fichiers utilities et bootstrap grid )
+\*--------------------------------------------------------------------*/
+/*
+ * Schema CSS de l'ensemble des propriétés des margin ( qui me sont pour l'instant nécessaire) :
+ *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
+ *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
+ *                        (ex: display-flex)
+ *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
+ *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
+ * @type Map
+ */
+.margin-0 {
+  margin: 0 !important;
+}
+
+.margin-1 {
+  margin: 0.25rem !important;
+}
+
+.margin-2 {
+  margin: 0.5rem !important;
+}
+
+.margin-3 {
+  margin: 1rem !important;
+}
+
+.margin-4 {
+  margin: 1.5rem !important;
+}
+
+.margin-5 {
+  margin: 3rem !important;
+}
+
+.margin-6 {
+  margin: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-0-medium {
+    margin: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-1-medium {
+    margin: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-2-medium {
+    margin: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-3-medium {
+    margin: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-4-medium {
+    margin: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-5-medium {
+    margin: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-6-medium {
+    margin: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-0-large {
+    margin: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-1-large {
+    margin: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-2-large {
+    margin: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-3-large {
+    margin: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-4-large {
+    margin: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-5-large {
+    margin: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-6-large {
+    margin: 4.5rem !important;
+  }
+}
+.margin-x-0 {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.margin-x-1 {
+  margin-right: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+
+.margin-x-2 {
+  margin-right: 0.5rem !important;
+  margin-left: 0.5rem !important;
+}
+
+.margin-x-3 {
+  margin-right: 1rem !important;
+  margin-left: 1rem !important;
+}
+
+.margin-x-4 {
+  margin-right: 1.5rem !important;
+  margin-left: 1.5rem !important;
+}
+
+.margin-x-5 {
+  margin-right: 3rem !important;
+  margin-left: 3rem !important;
+}
+
+.margin-x-6 {
+  margin-right: 4.5rem !important;
+  margin-left: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-x-0-medium {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-x-1-medium {
+    margin-right: 0.25rem !important;
+    margin-left: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-x-2-medium {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-x-3-medium {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-x-4-medium {
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-x-5-medium {
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-x-6-medium {
+    margin-right: 4.5rem !important;
+    margin-left: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-0-large {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-1-large {
+    margin-right: 0.25rem !important;
+    margin-left: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-2-large {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-3-large {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-4-large {
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-5-large {
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-x-6-large {
+    margin-right: 4.5rem !important;
+    margin-left: 4.5rem !important;
+  }
+}
+.margin-y-0 {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+}
+
+.margin-y-1 {
+  margin-top: 0.25rem !important;
+  margin-right: 0.25rem !important;
+}
+
+.margin-y-2 {
+  margin-top: 0.5rem !important;
+  margin-right: 0.5rem !important;
+}
+
+.margin-y-3 {
+  margin-top: 1rem !important;
+  margin-right: 1rem !important;
+}
+
+.margin-y-4 {
+  margin-top: 1.5rem !important;
+  margin-right: 1.5rem !important;
+}
+
+.margin-y-5 {
+  margin-top: 3rem !important;
+  margin-right: 3rem !important;
+}
+
+.margin-y-6 {
+  margin-top: 4.5rem !important;
+  margin-right: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-y-0-medium {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-y-1-medium {
+    margin-top: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-y-2-medium {
+    margin-top: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-y-3-medium {
+    margin-top: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-y-4-medium {
+    margin-top: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-y-5-medium {
+    margin-top: 3rem !important;
+    margin-right: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-y-6-medium {
+    margin-top: 4.5rem !important;
+    margin-right: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-0-large {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-1-large {
+    margin-top: 0.25rem !important;
+    margin-right: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-2-large {
+    margin-top: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-3-large {
+    margin-top: 1rem !important;
+    margin-right: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-4-large {
+    margin-top: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-5-large {
+    margin-top: 3rem !important;
+    margin-right: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-y-6-large {
+    margin-top: 4.5rem !important;
+    margin-right: 4.5rem !important;
+  }
+}
+.margin-top-0 {
+  margin-top: 0 !important;
+}
+
+.margin-top-1 {
+  margin-top: 0.25rem !important;
+}
+
+.margin-top-2 {
+  margin-top: 0.5rem !important;
+}
+
+.margin-top-3 {
+  margin-top: 1rem !important;
+}
+
+.margin-top-4 {
+  margin-top: 1.5rem !important;
+}
+
+.margin-top-5 {
+  margin-top: 3rem !important;
+}
+
+.margin-top-6 {
+  margin-top: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-top-0-medium {
+    margin-top: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-top-1-medium {
+    margin-top: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-top-2-medium {
+    margin-top: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-top-3-medium {
+    margin-top: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-top-4-medium {
+    margin-top: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-top-5-medium {
+    margin-top: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-top-6-medium {
+    margin-top: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-0-large {
+    margin-top: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-1-large {
+    margin-top: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-2-large {
+    margin-top: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-3-large {
+    margin-top: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-4-large {
+    margin-top: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-5-large {
+    margin-top: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-top-6-large {
+    margin-top: 4.5rem !important;
+  }
+}
+.margin-end-0 {
+  margin-right: 0 !important;
+}
+
+.margin-end-1 {
+  margin-right: 0.25rem !important;
+}
+
+.margin-end-2 {
+  margin-right: 0.5rem !important;
+}
+
+.margin-end-3 {
+  margin-right: 1rem !important;
+}
+
+.margin-end-4 {
+  margin-right: 1.5rem !important;
+}
+
+.margin-end-5 {
+  margin-right: 3rem !important;
+}
+
+.margin-end-6 {
+  margin-right: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-end-0-medium {
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-end-1-medium {
+    margin-right: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-end-2-medium {
+    margin-right: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-end-3-medium {
+    margin-right: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-end-4-medium {
+    margin-right: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-end-5-medium {
+    margin-right: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-end-6-medium {
+    margin-right: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-0-large {
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-1-large {
+    margin-right: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-2-large {
+    margin-right: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-3-large {
+    margin-right: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-4-large {
+    margin-right: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-5-large {
+    margin-right: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-end-6-large {
+    margin-right: 4.5rem !important;
+  }
+}
+.margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.margin-bottom-3 {
+  margin-bottom: 1rem !important;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.margin-bottom-5 {
+  margin-bottom: 3rem !important;
+}
+
+.margin-bottom-6 {
+  margin-bottom: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-bottom-0-medium {
+    margin-bottom: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-bottom-1-medium {
+    margin-bottom: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-bottom-2-medium {
+    margin-bottom: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-bottom-3-medium {
+    margin-bottom: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-bottom-4-medium {
+    margin-bottom: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-bottom-5-medium {
+    margin-bottom: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-bottom-6-medium {
+    margin-bottom: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-0-large {
+    margin-bottom: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-1-large {
+    margin-bottom: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-2-large {
+    margin-bottom: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-3-large {
+    margin-bottom: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-4-large {
+    margin-bottom: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-5-large {
+    margin-bottom: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-bottom-6-large {
+    margin-bottom: 4.5rem !important;
+  }
+}
+.margin-start-0 {
+  margin-left: 0 !important;
+}
+
+.margin-start-1 {
+  margin-left: 0.25rem !important;
+}
+
+.margin-start-2 {
+  margin-left: 0.5rem !important;
+}
+
+.margin-start-3 {
+  margin-left: 1rem !important;
+}
+
+.margin-start-4 {
+  margin-left: 1.5rem !important;
+}
+
+.margin-start-5 {
+  margin-left: 3rem !important;
+}
+
+.margin-start-6 {
+  margin-left: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .margin-start-0-medium {
+    margin-left: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-start-1-medium {
+    margin-left: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-start-2-medium {
+    margin-left: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-start-3-medium {
+    margin-left: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-start-4-medium {
+    margin-left: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-start-5-medium {
+    margin-left: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .margin-start-6-medium {
+    margin-left: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-0-large {
+    margin-left: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-1-large {
+    margin-left: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-2-large {
+    margin-left: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-3-large {
+    margin-left: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-4-large {
+    margin-left: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-5-large {
+    margin-left: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .margin-start-6-large {
+    margin-left: 4.5rem !important;
+  }
+}
+.padding-0 {
+  padding: 0 !important;
+}
+
+.padding-1 {
+  padding: 0.25rem !important;
+}
+
+.padding-2 {
+  padding: 0.5rem !important;
+}
+
+.padding-3 {
+  padding: 1rem !important;
+}
+
+.padding-4 {
+  padding: 1.5rem !important;
+}
+
+.padding-5 {
+  padding: 3rem !important;
+}
+
+.padding-6 {
+  padding: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-0-medium {
+    padding: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-1-medium {
+    padding: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-2-medium {
+    padding: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-3-medium {
+    padding: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-4-medium {
+    padding: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-5-medium {
+    padding: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-6-medium {
+    padding: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-0-large {
+    padding: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-1-large {
+    padding: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-2-large {
+    padding: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-3-large {
+    padding: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-4-large {
+    padding: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-5-large {
+    padding: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-6-large {
+    padding: 4.5rem !important;
+  }
+}
+.padding-x-0 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.padding-x-1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.padding-x-2 {
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+}
+
+.padding-x-3 {
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+}
+
+.padding-x-4 {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.padding-x-5 {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+}
+
+.padding-x-6 {
+  padding-right: 4.5rem !important;
+  padding-left: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-x-0-medium {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-x-1-medium {
+    padding-right: 0.25rem !important;
+    padding-left: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-x-2-medium {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-x-3-medium {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-x-4-medium {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-x-5-medium {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-x-6-medium {
+    padding-right: 4.5rem !important;
+    padding-left: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-0-large {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-1-large {
+    padding-right: 0.25rem !important;
+    padding-left: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-2-large {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-3-large {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-4-large {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-5-large {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-x-6-large {
+    padding-right: 4.5rem !important;
+    padding-left: 4.5rem !important;
+  }
+}
+.padding-y-0 {
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+}
+
+.padding-y-1 {
+  padding-top: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.padding-y-2 {
+  padding-top: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.padding-y-3 {
+  padding-top: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.padding-y-4 {
+  padding-top: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.padding-y-5 {
+  padding-top: 3rem !important;
+  padding-right: 3rem !important;
+}
+
+.padding-y-6 {
+  padding-top: 4.5rem !important;
+  padding-right: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-y-0-medium {
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-y-1-medium {
+    padding-top: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-y-2-medium {
+    padding-top: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-y-3-medium {
+    padding-top: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-y-4-medium {
+    padding-top: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-y-5-medium {
+    padding-top: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-y-6-medium {
+    padding-top: 4.5rem !important;
+    padding-right: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-0-large {
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-1-large {
+    padding-top: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-2-large {
+    padding-top: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-3-large {
+    padding-top: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-4-large {
+    padding-top: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-5-large {
+    padding-top: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-y-6-large {
+    padding-top: 4.5rem !important;
+    padding-right: 4.5rem !important;
+  }
+}
+.padding-top-0 {
+  padding-top: 0 !important;
+}
+
+.padding-top-1 {
+  padding-top: 0.25rem !important;
+}
+
+.padding-top-2 {
+  padding-top: 0.5rem !important;
+}
+
+.padding-top-3 {
+  padding-top: 1rem !important;
+}
+
+.padding-top-4 {
+  padding-top: 1.5rem !important;
+}
+
+.padding-top-5 {
+  padding-top: 3rem !important;
+}
+
+.padding-top-6 {
+  padding-top: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-top-0-medium {
+    padding-top: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-top-1-medium {
+    padding-top: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-top-2-medium {
+    padding-top: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-top-3-medium {
+    padding-top: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-top-4-medium {
+    padding-top: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-top-5-medium {
+    padding-top: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-top-6-medium {
+    padding-top: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-0-large {
+    padding-top: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-1-large {
+    padding-top: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-2-large {
+    padding-top: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-3-large {
+    padding-top: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-4-large {
+    padding-top: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-5-large {
+    padding-top: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-top-6-large {
+    padding-top: 4.5rem !important;
+  }
+}
+.padding-end-0 {
+  padding-right: 0 !important;
+}
+
+.padding-end-1 {
+  padding-right: 0.25rem !important;
+}
+
+.padding-end-2 {
+  padding-right: 0.5rem !important;
+}
+
+.padding-end-3 {
+  padding-right: 1rem !important;
+}
+
+.padding-end-4 {
+  padding-right: 1.5rem !important;
+}
+
+.padding-end-5 {
+  padding-right: 3rem !important;
+}
+
+.padding-end-6 {
+  padding-right: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-end-0-medium {
+    padding-right: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-end-1-medium {
+    padding-right: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-end-2-medium {
+    padding-right: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-end-3-medium {
+    padding-right: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-end-4-medium {
+    padding-right: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-end-5-medium {
+    padding-right: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-end-6-medium {
+    padding-right: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-0-large {
+    padding-right: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-1-large {
+    padding-right: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-2-large {
+    padding-right: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-3-large {
+    padding-right: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-4-large {
+    padding-right: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-5-large {
+    padding-right: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-end-6-large {
+    padding-right: 4.5rem !important;
+  }
+}
+.padding-bottom-0 {
+  padding-bottom: 0 !important;
+}
+
+.padding-bottom-1 {
+  padding-bottom: 0.25rem !important;
+}
+
+.padding-bottom-2 {
+  padding-bottom: 0.5rem !important;
+}
+
+.padding-bottom-3 {
+  padding-bottom: 1rem !important;
+}
+
+.padding-bottom-4 {
+  padding-bottom: 1.5rem !important;
+}
+
+.padding-bottom-5 {
+  padding-bottom: 3rem !important;
+}
+
+.padding-bottom-6 {
+  padding-bottom: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-bottom-0-medium {
+    padding-bottom: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-bottom-1-medium {
+    padding-bottom: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-bottom-2-medium {
+    padding-bottom: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-bottom-3-medium {
+    padding-bottom: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-bottom-4-medium {
+    padding-bottom: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-bottom-5-medium {
+    padding-bottom: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-bottom-6-medium {
+    padding-bottom: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-0-large {
+    padding-bottom: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-1-large {
+    padding-bottom: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-2-large {
+    padding-bottom: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-3-large {
+    padding-bottom: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-4-large {
+    padding-bottom: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-5-large {
+    padding-bottom: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-bottom-6-large {
+    padding-bottom: 4.5rem !important;
+  }
+}
+.padding-start-0 {
+  padding-left: 0 !important;
+}
+
+.padding-start-1 {
+  padding-left: 0.25rem !important;
+}
+
+.padding-start-2 {
+  padding-left: 0.5rem !important;
+}
+
+.padding-start-3 {
+  padding-left: 1rem !important;
+}
+
+.padding-start-4 {
+  padding-left: 1.5rem !important;
+}
+
+.padding-start-5 {
+  padding-left: 3rem !important;
+}
+
+.padding-start-6 {
+  padding-left: 4.5rem !important;
+}
+
+@media (min-width: 700px) {
+  .padding-start-0-medium {
+    padding-left: 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-start-1-medium {
+    padding-left: 0.25rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-start-2-medium {
+    padding-left: 0.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-start-3-medium {
+    padding-left: 1rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-start-4-medium {
+    padding-left: 1.5rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-start-5-medium {
+    padding-left: 3rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .padding-start-6-medium {
+    padding-left: 4.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-0-large {
+    padding-left: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-1-large {
+    padding-left: 0.25rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-2-large {
+    padding-left: 0.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-3-large {
+    padding-left: 1rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-4-large {
+    padding-left: 1.5rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-5-large {
+    padding-left: 3rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .padding-start-6-large {
+    padding-left: 4.5rem !important;
+  }
+}
+/*-----------------------------------------------------------------*\
+  #SETTINGS-BREAKPOINTS
+  Permet de paramétré les breakpoints. Le site serra adaptative
+  en fonction de ces breakpoints.
+\*-----------------------------------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des media queries.
+ * @type Map
+ */
+/*-----------------------------------------------------------------*\
+  #UTIL-BREAKPOINTS
+  Permet la génération sur lesquelle les classes utilitaires peuvent
+  intervenir
+\*-----------------------------------------------------------------*/
+/*
+ * Retourne une chaîne vide si le point d'arrêt est le plus petit, sinon retourne le nom avec un tiret devant.
+ * Utile pour créer des utilitaires réactifs.
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Largeur minimum d'un breakpoint. Nul pour le plus petit (premier) point d'arrêt..
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Média ayant au moins la largeur minimale du point de rupture. Pas de requête pour le point de rupture le plus petit.
+ * Fait en sorte que le @content s'applique au point d'arrêt donné et plus large..
+ */
+/*----------------------------------------*\
+  #PROTOTYPE-SIZING
+\*----------------------------------------*/
+/*
+ * Map contenant toutes les classes de `sizing`.
+ * @type Map
+ */
+/*
+ * Map contenant toute les tailles
+ * @type Map
+ */
+.width-15 {
+  width: 15% !important;
+}
+
+.width-25 {
+  width: 25% !important;
+}
+
+.width-33 {
+  width: 33% !important;
+}
+
+.width-50 {
+  width: 50% !important;
+}
+
+.width-68 {
+  width: 68% !important;
+}
+
+.width-75 {
+  width: 75% !important;
+}
+
+.width-87 {
+  width: 87% !important;
+}
+
+.width-96 {
+  width: 96% !important;
+}
+
+.width-100 {
+  width: 100% !important;
+}
+
+.width-15 {
+  width: 15% !important;
+}
+
+.width-25 {
+  width: 25% !important;
+}
+
+.width-33 {
+  width: 33% !important;
+}
+
+.width-50 {
+  width: 50% !important;
+}
+
+.width-68 {
+  width: 68% !important;
+}
+
+.width-75 {
+  width: 75% !important;
+}
+
+.width-87 {
+  width: 87% !important;
+}
+
+.width-96 {
+  width: 96% !important;
+}
+
+.width-100 {
+  width: 100% !important;
+}
+
+.height-15 {
+  height: 15% !important;
+}
+
+.height-25 {
+  height: 25% !important;
+}
+
+.height-33 {
+  height: 33% !important;
+}
+
+.height-50 {
+  height: 50% !important;
+}
+
+.height-68 {
+  height: 68% !important;
+}
+
+.height-75 {
+  height: 75% !important;
+}
+
+.height-87 {
+  height: 87% !important;
+}
+
+.height-96 {
+  height: 96% !important;
+}
+
+.height-100 {
+  height: 100% !important;
+}
+
+.height-15 {
+  height: 15% !important;
+}
+
+.height-25 {
+  height: 25% !important;
+}
+
+.height-33 {
+  height: 33% !important;
+}
+
+.height-50 {
+  height: 50% !important;
+}
+
+.height-68 {
+  height: 68% !important;
+}
+
+.height-75 {
+  height: 75% !important;
+}
+
+.height-87 {
+  height: 87% !important;
+}
+
+.height-96 {
+  height: 96% !important;
+}
+
+.height-100 {
+  height: 100% !important;
+}
+
+.min-width-15 {
+  min-width: 15% !important;
+}
+
+.min-width-25 {
+  min-width: 25% !important;
+}
+
+.min-width-33 {
+  min-width: 33% !important;
+}
+
+.min-width-50 {
+  min-width: 50% !important;
+}
+
+.min-width-68 {
+  min-width: 68% !important;
+}
+
+.min-width-75 {
+  min-width: 75% !important;
+}
+
+.min-width-87 {
+  min-width: 87% !important;
+}
+
+.min-width-96 {
+  min-width: 96% !important;
+}
+
+.min-width-100 {
+  min-width: 100% !important;
+}
+
+.min-width-15 {
+  min-width: 15% !important;
+}
+
+.min-width-25 {
+  min-width: 25% !important;
+}
+
+.min-width-33 {
+  min-width: 33% !important;
+}
+
+.min-width-50 {
+  min-width: 50% !important;
+}
+
+.min-width-68 {
+  min-width: 68% !important;
+}
+
+.min-width-75 {
+  min-width: 75% !important;
+}
+
+.min-width-87 {
+  min-width: 87% !important;
+}
+
+.min-width-96 {
+  min-width: 96% !important;
+}
+
+.min-width-100 {
+  min-width: 100% !important;
+}
+
+.max-width-15 {
+  max-width: 15% !important;
+}
+
+.max-width-25 {
+  max-width: 25% !important;
+}
+
+.max-width-33 {
+  max-width: 33% !important;
+}
+
+.max-width-50 {
+  max-width: 50% !important;
+}
+
+.max-width-68 {
+  max-width: 68% !important;
+}
+
+.max-width-75 {
+  max-width: 75% !important;
+}
+
+.max-width-87 {
+  max-width: 87% !important;
+}
+
+.max-width-96 {
+  max-width: 96% !important;
+}
+
+.max-width-100 {
+  max-width: 100% !important;
+}
+
+.max-width-15 {
+  max-width: 15% !important;
+}
+
+.max-width-25 {
+  max-width: 25% !important;
+}
+
+.max-width-33 {
+  max-width: 33% !important;
+}
+
+.max-width-50 {
+  max-width: 50% !important;
+}
+
+.max-width-68 {
+  max-width: 68% !important;
+}
+
+.max-width-75 {
+  max-width: 75% !important;
+}
+
+.max-width-87 {
+  max-width: 87% !important;
+}
+
+.max-width-96 {
+  max-width: 96% !important;
+}
+
+.max-width-100 {
+  max-width: 100% !important;
+}
+
+@media (min-width: 700px) {
+  .width-15-medium {
+    width: 15% !important;
+  }
+
+  .width-25-medium {
+    width: 25% !important;
+  }
+
+  .width-33-medium {
+    width: 33% !important;
+  }
+
+  .width-50-medium {
+    width: 50% !important;
+  }
+
+  .width-68-medium {
+    width: 68% !important;
+  }
+
+  .width-75-medium {
+    width: 75% !important;
+  }
+
+  .width-87-medium {
+    width: 87% !important;
+  }
+
+  .width-96-medium {
+    width: 96% !important;
+  }
+
+  .width-100-medium {
+    width: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .width-15-medium {
+    width: 15% !important;
+  }
+
+  .width-25-medium {
+    width: 25% !important;
+  }
+
+  .width-33-medium {
+    width: 33% !important;
+  }
+
+  .width-50-medium {
+    width: 50% !important;
+  }
+
+  .width-68-medium {
+    width: 68% !important;
+  }
+
+  .width-75-medium {
+    width: 75% !important;
+  }
+
+  .width-87-medium {
+    width: 87% !important;
+  }
+
+  .width-96-medium {
+    width: 96% !important;
+  }
+
+  .width-100-medium {
+    width: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .height-15-medium {
+    height: 15% !important;
+  }
+
+  .height-25-medium {
+    height: 25% !important;
+  }
+
+  .height-33-medium {
+    height: 33% !important;
+  }
+
+  .height-50-medium {
+    height: 50% !important;
+  }
+
+  .height-68-medium {
+    height: 68% !important;
+  }
+
+  .height-75-medium {
+    height: 75% !important;
+  }
+
+  .height-87-medium {
+    height: 87% !important;
+  }
+
+  .height-96-medium {
+    height: 96% !important;
+  }
+
+  .height-100-medium {
+    height: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .height-15-medium {
+    height: 15% !important;
+  }
+
+  .height-25-medium {
+    height: 25% !important;
+  }
+
+  .height-33-medium {
+    height: 33% !important;
+  }
+
+  .height-50-medium {
+    height: 50% !important;
+  }
+
+  .height-68-medium {
+    height: 68% !important;
+  }
+
+  .height-75-medium {
+    height: 75% !important;
+  }
+
+  .height-87-medium {
+    height: 87% !important;
+  }
+
+  .height-96-medium {
+    height: 96% !important;
+  }
+
+  .height-100-medium {
+    height: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .min-width-15-medium {
+    min-width: 15% !important;
+  }
+
+  .min-width-25-medium {
+    min-width: 25% !important;
+  }
+
+  .min-width-33-medium {
+    min-width: 33% !important;
+  }
+
+  .min-width-50-medium {
+    min-width: 50% !important;
+  }
+
+  .min-width-68-medium {
+    min-width: 68% !important;
+  }
+
+  .min-width-75-medium {
+    min-width: 75% !important;
+  }
+
+  .min-width-87-medium {
+    min-width: 87% !important;
+  }
+
+  .min-width-96-medium {
+    min-width: 96% !important;
+  }
+
+  .min-width-100-medium {
+    min-width: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .min-width-15-medium {
+    min-width: 15% !important;
+  }
+
+  .min-width-25-medium {
+    min-width: 25% !important;
+  }
+
+  .min-width-33-medium {
+    min-width: 33% !important;
+  }
+
+  .min-width-50-medium {
+    min-width: 50% !important;
+  }
+
+  .min-width-68-medium {
+    min-width: 68% !important;
+  }
+
+  .min-width-75-medium {
+    min-width: 75% !important;
+  }
+
+  .min-width-87-medium {
+    min-width: 87% !important;
+  }
+
+  .min-width-96-medium {
+    min-width: 96% !important;
+  }
+
+  .min-width-100-medium {
+    min-width: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .max-width-15-medium {
+    max-width: 15% !important;
+  }
+
+  .max-width-25-medium {
+    max-width: 25% !important;
+  }
+
+  .max-width-33-medium {
+    max-width: 33% !important;
+  }
+
+  .max-width-50-medium {
+    max-width: 50% !important;
+  }
+
+  .max-width-68-medium {
+    max-width: 68% !important;
+  }
+
+  .max-width-75-medium {
+    max-width: 75% !important;
+  }
+
+  .max-width-87-medium {
+    max-width: 87% !important;
+  }
+
+  .max-width-96-medium {
+    max-width: 96% !important;
+  }
+
+  .max-width-100-medium {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 700px) {
+  .max-width-15-medium {
+    max-width: 15% !important;
+  }
+
+  .max-width-25-medium {
+    max-width: 25% !important;
+  }
+
+  .max-width-33-medium {
+    max-width: 33% !important;
+  }
+
+  .max-width-50-medium {
+    max-width: 50% !important;
+  }
+
+  .max-width-68-medium {
+    max-width: 68% !important;
+  }
+
+  .max-width-75-medium {
+    max-width: 75% !important;
+  }
+
+  .max-width-87-medium {
+    max-width: 87% !important;
+  }
+
+  .max-width-96-medium {
+    max-width: 96% !important;
+  }
+
+  .max-width-100-medium {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .width-15-large {
+    width: 15% !important;
+  }
+
+  .width-25-large {
+    width: 25% !important;
+  }
+
+  .width-33-large {
+    width: 33% !important;
+  }
+
+  .width-50-large {
+    width: 50% !important;
+  }
+
+  .width-68-large {
+    width: 68% !important;
+  }
+
+  .width-75-large {
+    width: 75% !important;
+  }
+
+  .width-87-large {
+    width: 87% !important;
+  }
+
+  .width-96-large {
+    width: 96% !important;
+  }
+
+  .width-100-large {
+    width: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .width-15-large {
+    width: 15% !important;
+  }
+
+  .width-25-large {
+    width: 25% !important;
+  }
+
+  .width-33-large {
+    width: 33% !important;
+  }
+
+  .width-50-large {
+    width: 50% !important;
+  }
+
+  .width-68-large {
+    width: 68% !important;
+  }
+
+  .width-75-large {
+    width: 75% !important;
+  }
+
+  .width-87-large {
+    width: 87% !important;
+  }
+
+  .width-96-large {
+    width: 96% !important;
+  }
+
+  .width-100-large {
+    width: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .height-15-large {
+    height: 15% !important;
+  }
+
+  .height-25-large {
+    height: 25% !important;
+  }
+
+  .height-33-large {
+    height: 33% !important;
+  }
+
+  .height-50-large {
+    height: 50% !important;
+  }
+
+  .height-68-large {
+    height: 68% !important;
+  }
+
+  .height-75-large {
+    height: 75% !important;
+  }
+
+  .height-87-large {
+    height: 87% !important;
+  }
+
+  .height-96-large {
+    height: 96% !important;
+  }
+
+  .height-100-large {
+    height: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .height-15-large {
+    height: 15% !important;
+  }
+
+  .height-25-large {
+    height: 25% !important;
+  }
+
+  .height-33-large {
+    height: 33% !important;
+  }
+
+  .height-50-large {
+    height: 50% !important;
+  }
+
+  .height-68-large {
+    height: 68% !important;
+  }
+
+  .height-75-large {
+    height: 75% !important;
+  }
+
+  .height-87-large {
+    height: 87% !important;
+  }
+
+  .height-96-large {
+    height: 96% !important;
+  }
+
+  .height-100-large {
+    height: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .min-width-15-large {
+    min-width: 15% !important;
+  }
+
+  .min-width-25-large {
+    min-width: 25% !important;
+  }
+
+  .min-width-33-large {
+    min-width: 33% !important;
+  }
+
+  .min-width-50-large {
+    min-width: 50% !important;
+  }
+
+  .min-width-68-large {
+    min-width: 68% !important;
+  }
+
+  .min-width-75-large {
+    min-width: 75% !important;
+  }
+
+  .min-width-87-large {
+    min-width: 87% !important;
+  }
+
+  .min-width-96-large {
+    min-width: 96% !important;
+  }
+
+  .min-width-100-large {
+    min-width: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .min-width-15-large {
+    min-width: 15% !important;
+  }
+
+  .min-width-25-large {
+    min-width: 25% !important;
+  }
+
+  .min-width-33-large {
+    min-width: 33% !important;
+  }
+
+  .min-width-50-large {
+    min-width: 50% !important;
+  }
+
+  .min-width-68-large {
+    min-width: 68% !important;
+  }
+
+  .min-width-75-large {
+    min-width: 75% !important;
+  }
+
+  .min-width-87-large {
+    min-width: 87% !important;
+  }
+
+  .min-width-96-large {
+    min-width: 96% !important;
+  }
+
+  .min-width-100-large {
+    min-width: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .max-width-15-large {
+    max-width: 15% !important;
+  }
+
+  .max-width-25-large {
+    max-width: 25% !important;
+  }
+
+  .max-width-33-large {
+    max-width: 33% !important;
+  }
+
+  .max-width-50-large {
+    max-width: 50% !important;
+  }
+
+  .max-width-68-large {
+    max-width: 68% !important;
+  }
+
+  .max-width-75-large {
+    max-width: 75% !important;
+  }
+
+  .max-width-87-large {
+    max-width: 87% !important;
+  }
+
+  .max-width-96-large {
+    max-width: 96% !important;
+  }
+
+  .max-width-100-large {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 900px) {
+  .max-width-15-large {
+    max-width: 15% !important;
+  }
+
+  .max-width-25-large {
+    max-width: 25% !important;
+  }
+
+  .max-width-33-large {
+    max-width: 33% !important;
+  }
+
+  .max-width-50-large {
+    max-width: 50% !important;
+  }
+
+  .max-width-68-large {
+    max-width: 68% !important;
+  }
+
+  .max-width-75-large {
+    max-width: 75% !important;
+  }
+
+  .max-width-87-large {
+    max-width: 87% !important;
+  }
+
+  .max-width-96-large {
+    max-width: 96% !important;
+  }
+
+  .max-width-100-large {
+    max-width: 100% !important;
+  }
+}
+.vh-100 {
+  height: 100vh;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+/*-----------------------------------------------------------------*\
+  #SETTINGS-BREAKPOINTS
+  Permet de paramétré les breakpoints. Le site serra adaptative
+  en fonction de ces breakpoints.
+\*-----------------------------------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des media queries.
+ * @type Map
+ */
+/*-----------------------------------------------------------------*\
+  #UTIL-BREAKPOINTS
+  Permet la génération sur lesquelle les classes utilitaires peuvent
+  intervenir
+\*-----------------------------------------------------------------*/
+/*
+ * Retourne une chaîne vide si le point d'arrêt est le plus petit, sinon retourne le nom avec un tiret devant.
+ * Utile pour créer des utilitaires réactifs.
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Largeur minimum d'un breakpoint. Nul pour le plus petit (premier) point d'arrêt..
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Média ayant au moins la largeur minimale du point de rupture. Pas de requête pour le point de rupture le plus petit.
+ * Fait en sorte que le @content s'applique au point d'arrêt donné et plus large..
+ */
+/*-------------------------------------------------------------------*\
+  #PROTOTYPE-FLEX
+  Crée des classes utilitaires appropriées concernant les flexbox
+  ( source intéressante aller dans le code source de bootstrap dans
+  le dossier utilities, les fichiers utilities et bootstrap grid )
+  Note: La classe display flex est conçu dans le fichier display.
+  Théoriquement elle devrait être conçu au sein de ce fichier pour
+  plus de cohérence ( cela dépend pour qui ).
+\*--------------------------------------------------------------------*/
+/*
+ * Schema CSS de l'ensemble des propriétés des flex box ( qui me sont pour l'instant nécessaire) :
+ *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
+ *   - Class: Customisation de la class. Si c'est appliqué, cela serra `class-property` (ex: flex-row)
+ *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
+ *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
+ * @type Map
+ */
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+@media (min-width: 700px) {
+  .flex-row-medium {
+    flex-direction: row !important;
+  }
+}
+@media (min-width: 700px) {
+  .flex-column-medium {
+    flex-direction: column !important;
+  }
+}
+@media (min-width: 700px) {
+  .flex-row-reverse-medium {
+    flex-direction: row-reverse !important;
+  }
+}
+@media (min-width: 700px) {
+  .flex-column-reverse-medium {
+    flex-direction: column-reverse !important;
+  }
+}
+@media (min-width: 900px) {
+  .flex-row-large {
+    flex-direction: row !important;
+  }
+}
+@media (min-width: 900px) {
+  .flex-column-large {
+    flex-direction: column !important;
+  }
+}
+@media (min-width: 900px) {
+  .flex-row-reverse-large {
+    flex-direction: row-reverse !important;
+  }
+}
+@media (min-width: 900px) {
+  .flex-column-reverse-large {
+    flex-direction: column-reverse !important;
+  }
+}
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.justify-content-around {
+  justify-content: space-around !important;
+}
+
+@media (min-width: 700px) {
+  .justify-content-start-medium {
+    justify-content: flex-start !important;
+  }
+}
+@media (min-width: 700px) {
+  .justify-content-center-medium {
+    justify-content: center !important;
+  }
+}
+@media (min-width: 700px) {
+  .justify-content-between-medium {
+    justify-content: space-between !important;
+  }
+}
+@media (min-width: 700px) {
+  .justify-content-around-medium {
+    justify-content: space-around !important;
+  }
+}
+@media (min-width: 900px) {
+  .justify-content-start-large {
+    justify-content: flex-start !important;
+  }
+}
+@media (min-width: 900px) {
+  .justify-content-center-large {
+    justify-content: center !important;
+  }
+}
+@media (min-width: 900px) {
+  .justify-content-between-large {
+    justify-content: space-between !important;
+  }
+}
+@media (min-width: 900px) {
+  .justify-content-around-large {
+    justify-content: space-around !important;
+  }
+}
+.align-items-start {
+  align-items: flex-start !important;
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+@media (min-width: 700px) {
+  .align-items-start-medium {
+    align-items: flex-start !important;
+  }
+}
+@media (min-width: 700px) {
+  .align-items-end-medium {
+    align-items: flex-end !important;
+  }
+}
+@media (min-width: 700px) {
+  .align-items-center-medium {
+    align-items: center !important;
+  }
+}
+@media (min-width: 900px) {
+  .align-items-start-large {
+    align-items: flex-start !important;
+  }
+}
+@media (min-width: 900px) {
+  .align-items-end-large {
+    align-items: flex-end !important;
+  }
+}
+@media (min-width: 900px) {
+  .align-items-center-large {
+    align-items: center !important;
+  }
+}
+/*-----------------------------------------------------------------*\
+  #SETTINGS-BREAKPOINTS
+  Permet de paramétré les breakpoints. Le site serra adaptative
+  en fonction de ces breakpoints.
+\*-----------------------------------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des media queries.
+ * @type Map
+ */
+/*-----------------------------------------------------------------*\
+  #UTIL-BREAKPOINTS
+  Permet la génération sur lesquelle les classes utilitaires peuvent
+  intervenir
+\*-----------------------------------------------------------------*/
+/*
+ * Retourne une chaîne vide si le point d'arrêt est le plus petit, sinon retourne le nom avec un tiret devant.
+ * Utile pour créer des utilitaires réactifs.
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Largeur minimum d'un breakpoint. Nul pour le plus petit (premier) point d'arrêt..
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Média ayant au moins la largeur minimale du point de rupture. Pas de requête pour le point de rupture le plus petit.
+ * Fait en sorte que le @content s'applique au point d'arrêt donné et plus large..
+ */
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*--------------------------------------------------------*\
+  #SETTINGS-SPACER
+  Gère les espace globale au margin, padding ect.
+  Permet la cohérence des espacements entre les éléments.
+\*--------------------------------------------------------*/
+/*
+ * Espacement principal baser que la margin globale ( 1rem = font-size 100% = 16px )
+ * @type Number
+ */
+/*----------------------------------------*\
+  #PROTOTYPE-DISPLAY
+\*----------------------------------------*/
+/*
+ * Map contenant toute les classes utilitaires `display`
+ * @type Map
+ */
+/*
+ * Génère toutes les classes `display`
+ */
+.display-block {
+  display: block !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+@media (min-width: 700px) {
+  .display-block-medium {
+    display: block !important;
+  }
+
+  .display-flex-medium {
+    display: flex !important;
+  }
+}
+@media (min-width: 900px) {
+  .display-block-large {
+    display: block !important;
+  }
+
+  .display-flex-large {
+    display: flex !important;
+  }
+}
+/*-----------------------------------------------------------------*\
+  #SETTINGS-BREAKPOINTS
+  Permet de paramétré les breakpoints. Le site serra adaptative
+  en fonction de ces breakpoints.
+\*-----------------------------------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des media queries.
+ * @type Map
+ */
+/*-----------------------------------------------------------------*\
+  #UTIL-BREAKPOINTS
+  Permet la génération sur lesquelle les classes utilitaires peuvent
+  intervenir
+\*-----------------------------------------------------------------*/
+/*
+ * Retourne une chaîne vide si le point d'arrêt est le plus petit, sinon retourne le nom avec un tiret devant.
+ * Utile pour créer des utilitaires réactifs.
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Largeur minimum d'un breakpoint. Nul pour le plus petit (premier) point d'arrêt..
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Média ayant au moins la largeur minimale du point de rupture. Pas de requête pour le point de rupture le plus petit.
+ * Fait en sorte que le @content s'applique au point d'arrêt donné et plus large..
+ */
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------------------------*\
+  #PROTOTYPE-BORDER
+\*-----------------------------------------------------------------*/
+/*
+ * Schema CSS de l'ensemble des propriétés des margin ( qui me sont pour l'instant nécessaire) :
+ *   - Property: Nom de la property. Cela serra également le nom de la class par défaut
+ *   - Class (optionnel): Customisation de la class. Si c'est appliqué, cela serra `class-property`
+ *                        (ex: display-flex)
+ *   - Base: Quelles sont les différents espacement impacté ( ici margin-top, margin-bottom ou les deux ect.).
+ *           border radius position: 1. coin en haut à gauche, 2. coin en haut à droite,
+ *                                   3. coin en bas à droite, 4. coin en bas à gauche
+ *   - Values: Valeur que la property prendra ( une valeur = une classe utilitaire) :
+ *             Chaque clés au sein de ces valeurs feront partie intégrante de la classe
+ * @type Map
+ */
+.rounded {
+  border-radius: 0.8rem 0.8rem 0.8rem 0.8rem !important;
+}
+
+.rounded-top {
+  border-radius: 0.8rem 0.8rem 0 0 !important;
+}
+
+.rounded-right {
+  border-radius: 0 0.8rem 0.8rem 0 !important;
+}
+
+.rounded-bottom {
+  border-radius: 0 0 0.8rem 0.8rem !important;
+}
+
+.rounded-left {
+  border-radius: 0.8rem 0 0 0.8rem !important;
+}
+
+.no-rounded {
+  border-radius: 0 0 0 0 !important;
+}
+
+.no-rounded-top {
+  border-radius: 0 0 0 0 !important;
+}
+
+.no-rounded-bottom {
+  border-radius: 0 0 0 0 !important;
+}
+
+@media (min-width: 700px) {
+  .rounded-medium {
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .rounded-top-medium {
+    border-radius: 0.8rem 0.8rem 0 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .rounded-right-medium {
+    border-radius: 0 0.8rem 0.8rem 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .rounded-bottom-medium {
+    border-radius: 0 0 0.8rem 0.8rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .rounded-left-medium {
+    border-radius: 0.8rem 0 0 0.8rem !important;
+  }
+}
+@media (min-width: 700px) {
+  .no-rounded-medium {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .no-rounded-top-medium {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+@media (min-width: 700px) {
+  .no-rounded-bottom-medium {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .rounded-large {
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .rounded-top-large {
+    border-radius: 0.8rem 0.8rem 0 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .rounded-right-large {
+    border-radius: 0 0.8rem 0.8rem 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .rounded-bottom-large {
+    border-radius: 0 0 0.8rem 0.8rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .rounded-left-large {
+    border-radius: 0.8rem 0 0 0.8rem !important;
+  }
+}
+@media (min-width: 900px) {
+  .no-rounded-large {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .no-rounded-top-large {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .no-rounded-bottom-large {
+    border-radius: 0 0 0 0 !important;
+  }
+}
+/*-----------------------------------------------------------------*\
+  #SETTINGS-BREAKPOINTS
+  Permet de paramétré les breakpoints. Le site serra adaptative
+  en fonction de ces breakpoints.
+\*-----------------------------------------------------------------*/
+/*
+ * Une liste de points d'arrêt nommés. Vous pouvez les utiliser avec le mixin `breakpoint()` pour créer rapidement des media queries.
+ * @type Map
+ */
+/*-----------------------------------------------------------------*\
+  #UTIL-BREAKPOINTS
+  Permet la génération sur lesquelle les classes utilitaires peuvent
+  intervenir
+\*-----------------------------------------------------------------*/
+/*
+ * Retourne une chaîne vide si le point d'arrêt est le plus petit, sinon retourne le nom avec un tiret devant.
+ * Utile pour créer des utilitaires réactifs.
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Largeur minimum d'un breakpoint. Nul pour le plus petit (premier) point d'arrêt..
+ *     >> breakpoint-min(sm, (small: 0, medium: 375px, large: 1440px))
+ */
+/*
+ * Média ayant au moins la largeur minimale du point de rupture. Pas de requête pour le point de rupture le plus petit.
+ * Fait en sorte que le @content s'applique au point d'arrêt donné et plus large..
+ */
+/*----------------------------------------*\
+  #PROTOTYPE-SHADOW
+\*----------------------------------------*/
+.shadow {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+@media (min-width: 700px) {
+  .shadow-medium {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) !important;
+  }
+}
+@media (min-width: 700px) {
+  .shadow-none-medium {
+    box-shadow: none !important;
+  }
+}
+@media (min-width: 900px) {
+  .shadow-large {
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) !important;
+  }
+}
+@media (min-width: 900px) {
+  .shadow-none-large {
+    box-shadow: none !important;
+  }
+}
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------*\
+  #TYPOGRAPHY-COLORS
+  Définition des couleurs de text / liens possible
+\*------------------------------------------------*/
+.background-primary-orange {
+  background: #e38826 !important;
+}
+
+.background-primary-dark-cyan {
+  background: #006970 !important;
+}
+
+.background-primary-very-dark-cyan {
+  background: #004241 !important;
+}
+
+.background-neutral-white {
+  background: rgba(255, 255, 255, 0.75) !important;
+}
+
+.background-neutral-gray {
+  background: #f2f2f2 !important;
+}
+
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*------------------------------------*\
+  #SETTINGS-BUTTON-BLOCK
+\*------------------------------------*/
+/*
+ * Arrondis les bords des boutons
+ * @type Number
+ */
+/*
+ * Famille de polices pour les éléments de bouton.
+ * @type Font
+ */
+/*
+ * Rembourrage à l'intérieur des boutons.
+ * type List
+ */
+/*
+ * Marge autour des boutons.
+ * type Number
+ */
+/*
+ * Remplissage par défaut des boutons. Peut être soit `solid` soit `hollow`.
+ * @type Keyword
+ */
+/*
+ * Couleur de fond par défaut des boutons.
+ * @type Color
+ */
+/*
+ * Couleur de fond au survol pour les boutons.
+ * @type Color
+ */
+/*
+ * Couleur de la police pour les boutons.
+ * @type List
+ */
+/*
+ * Border for buttons, transparent by default
+ * @type List
+ */
+/*
+ * Transitions pour les boutons.
+ * @type List
+ */
+/*
+ * Taille des boutons.
+ * @type Number
+ */
+/*
+ * Poids des polices des boutons
+ * @type Number
+ */
+/*------------------------------------*\
+  #COMPONENTS-BUTTON-BLOCK
+  Block de la méthodologie du B de BEM
+\*------------------------------------*/
+/*
+ * Structure principale des boutons par défaut
+ */
+.button {
+  border-radius: calc(1.375rem + 1.5vw);
+  margin: 0 0 1rem 0;
+  padding: 1em 2em;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  font-size: 0.9rem;
+  font-weight: 400;
+  background: #f2f2f2;
+}
+@media (min-width: 1200px) {
+  .button {
+    border-radius: 2.5rem;
+  }
+}
+
+/*------------------------------------*\
+  #COMPONENTS-BUTTON-STATES
+\*------------------------------------*/
+/*
+ * États par défaut en mode désactivés des boutons
+ */
+.button.disabled, .button[disabled],
+.button.disabled:hover, .button[disabled]:hover,
+.button.disabled:focus, .button[disabled]:focus {
+  background-color: #f2f2f2;
+}
+
+/*
+ * États de survole des boutons
+ */
+.button:hover,
+.button:focus {
+  background-color: #756af1;
+}
+
+/*------------------------------------------*\
+  #COMPONENTS-BUTTON-MODIFIER
+  Modifier du M de BEM
+\*------------------------------------------*/
+/*
+ * Modifie la couleur de la font et du background des boutons avec une couleur primaire
+ */
+.button--primary {
+  background: #f2f2f2;
+}
+
+/*# sourceMappingURL=style.css.map */
