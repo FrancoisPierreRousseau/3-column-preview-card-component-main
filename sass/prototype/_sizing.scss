@@ -23,6 +23,7 @@ $prototype-sizing: (
  * @type Map
  */
 $prototype-sizes: (
+        0: 0,
         15: 15%,
         25: 25%,
         33: 33%,
@@ -31,7 +32,7 @@ $prototype-sizes: (
         75: 75%,
         87: 87%,
         96: 96%,
-        100: 100%
+        100: 100%,
 ) !default;
 
 // Construction des classes utilitaires

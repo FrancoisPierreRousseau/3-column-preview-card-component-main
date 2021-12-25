@@ -14,6 +14,11 @@
   justify-content: card-feature.$justify-content;
   padding: card-feature.$padding;
   color: card-feature.$color;
+
+  @media (min-width: 993px) {
+    width: 20rem;
+  }
+
 }
 
 .card-feature div .button:hover,
