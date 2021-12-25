@@ -12,8 +12,6 @@ $flex-direction: column !default;
 
 $justify-content: space-between !default;
 
-$padding: 3.4rem;
-
 $color: map.get(global.$palette, neutral, "white", color);
 
 $s-button-background: transparent !default;
