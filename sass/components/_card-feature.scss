@@ -1,0 +1,40 @@
+@use "../settings/card";
+
+/*-------------------------------------------------*\
+  #COMPONENTS-CARD-BLOCK
+  Application de la structure et disposition global des cards features
+\*---------------------------------------------------*/
+
+/*
+ * Structure principale des cards par défaut
+ */
+.card-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.card-feature div .button:hover {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  outline: 1.5px solid rgba(255, 255, 255, 0.75);;
+}
+
+
+/*-------------------------------------------------*\
+  #COMPONENTS-CARD-FEATURES-MODIFIER
+  Style des elements se trouvant au sein des cartes
+\*---------------------------------------------------*/
+
+
+.card-feature--primary-very-dark-cyan {
+  background-color: #004241;
+}
+
+.card-feature--primary-dark-cyan {
+  background-color: #006970;
+}
+
+

@@ -3661,4 +3661,114 @@ h3, .h3 {
   background: #f2f2f2;
 }
 
+/*------------------------------------*\
+  #SETTINGS-GLOBAL
+\*------------------------------------*/
+/*
+ * Attribut de taille de police appliqué à `<html>` et `<body>`. Nous utilisons 100% par défaut,
+ * la valeur est donc héritée des paramètres du navigateur de l'utilisateur.
+ */
+/*
+ * Hauteur de ligne par défaut pour tous les types. `$global-lineheight` est 24px alors que
+ *`$global-font-size` est 16px
+ */
+/*
+ * Couleurs utilisées pour les boutons, les légendes, les liens, etc.
+ * Il doit toujours y avoir une couleur appelée `primary`.
+ */
+/*
+ * Liste de polices du body
+ * @type List
+ */
+/*
+ * Valeur globale utilisée pour la marge sur les composants
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée pour le rembourrage des composants
+ * @type Number
+ */
+/*
+ * Poids de la police globale utilisée pour les caractères normaux
+ * @type Keyword | Number
+ */
+/*
+ * Liste de polices du corps.
+ * @type List
+ */
+/*
+ * Valeur du curseur du bouton, `auto` par défaut
+ * @type Keyword
+ */
+/*
+ * Arrondi les bords de tout les éléments qui peuvent avoir un bord arrondis.
+ * @type Number
+ */
+/*-----------------------------------------------------------------*\
+  #SETTINGS-CARD
+  Permet de paramétré les propriétés appliqué au sein des cartes
+\*-----------------------------------------------------------------*/
+/*
+ * Arrondis les bords des cards
+ * @type Number
+ */
+/*
+ * Couleur de fond par défaut des cards.
+ * @type Color
+ */
+/*
+ * Largeur maximal des cards
+ * @type Number
+ */
+/*
+ * Valeur globale utilisée concernant le rembourrage des cards
+ * @type Number
+ */
+/*
+ * Ombre d'une carte par défaut.
+ * @type List
+ */
+/*
+ * La carte hérite de la marge globale
+ * @type Number
+ */
+/*------------------------------------*\
+  #SETTINGS-CARD-MODIFIER
+\*------------------------------------*/
+/*------------------------------------*\
+  #SETTINGS-CARD-ELEMENTS
+\*------------------------------------*/
+/*-------------------------------------------------*\
+  #COMPONENTS-CARD-BLOCK
+  Application de la structure et disposition global des cards features
+\*---------------------------------------------------*/
+/*
+ * Structure principale des cards par défaut
+ */
+.card-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.card-feature div .button:hover {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  outline: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+/*-------------------------------------------------*\
+  #COMPONENTS-CARD-FEATURES-MODIFIER
+  Style des elements se trouvant au sein des cartes
+\*---------------------------------------------------*/
+.card-feature--primary-very-dark-cyan {
+  background-color: #004241;
+}
+
+.card-feature--primary-dark-cyan {
+  background-color: #006970;
+}
+
 /*# sourceMappingURL=style.css.map */
