@@ -1,4 +1,4 @@
-@use "../settings/card";
+@use "../settings/card-feature";
 
 /*-------------------------------------------------*\
   #COMPONENTS-CARD-BLOCK
@@ -9,19 +9,23 @@
  * Structure principale des cards par défaut
  */
 .card-feature {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 3rem;
-  color: rgba(255, 255, 255, 0.75);
+  display: card-feature.$display;
+  flex-direction: card-feature.$flex-direction;
+  justify-content: card-feature.$justify-content;
+  padding: card-feature.$padding;
+  color: card-feature.$color;
 }
 
-.card-feature div .button:hover {
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.75);
-  outline: 1.5px solid rgba(255, 255, 255, 0.75);;
+.card-feature div .button:hover,
+.card-feature div .button:focus {
+  background: card-feature.$s-button-background;
+  color: card-feature.$s-button-color;
+  outline: card-feature.$s-button-outline;
 }
 
+.card-feature h3 {
+  color: rgba(255, 255, 255, 1);
+}
 
 /*-------------------------------------------------*\
   #COMPONENTS-CARD-FEATURES-MODIFIER

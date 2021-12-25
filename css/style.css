@@ -3709,10 +3709,6 @@ h3, .h3 {
   Permet de paramétré les propriétés appliqué au sein des cartes
 \*-----------------------------------------------------------------*/
 /*
- * Arrondis les bords des cards
- * @type Number
- */
-/*
  * Couleur de fond par défaut des cards.
  * @type Color
  */
@@ -3753,10 +3749,15 @@ h3, .h3 {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.card-feature div .button:hover {
-  background-color: transparent;
+.card-feature div .button:hover,
+.card-feature div .button:focus {
+  background: transparent;
   color: rgba(255, 255, 255, 0.75);
   outline: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+.card-feature h3 {
+  color: white;
 }
 
 /*-------------------------------------------------*\

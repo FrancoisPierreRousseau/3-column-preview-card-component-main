@@ -6,11 +6,22 @@
   Permet de paramétré les propriétés appliqué au sein des cartes
 \*-----------------------------------------------------------------*/
 
-/*
- * Arrondis les bords des cards
- * @type Number
- */
-$radius: global.$radius !default;
+$display: flex !default;
+
+$flex-direction: column !default;
+
+$justify-content: space-between !default;
+
+$padding: 3rem;
+
+$color: map.get(global.$palette, neutral, "white", color);
+
+$s-button-background: transparent !default;
+
+$s-button-color: $color !default;
+
+$s-button-outline: 1.5px solid $color !default;
+
 
 /*
  * Couleur de fond par défaut des cards.
