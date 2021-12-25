@@ -35,7 +35,7 @@ $header-margin-bottom: 0.5rem !default;
  *
  */
 $header-styles: (
-    'h3': ('font-size': 38px)
+    'h3': ('font-size': 40px)
 ) !default;
 
 /*
@@ -54,7 +54,7 @@ $header-font-style: normal !default;
  * Hauteur de ligne du texte à l'intérieur des éléments `<p>`.
  * @type Number
  */
-$paragraph-lineheight: 1.6 !default;
+$paragraph-lineheight: 1.8 !default;
 
 /*
  * Marge inférieure des paragraphes.
